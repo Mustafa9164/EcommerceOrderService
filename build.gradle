@@ -32,6 +32,8 @@ dependencies {
 	annotationProcessor 'org.springframework.boot:spring-boot-configuration-processor'
 	annotationProcessor 'org.projectlombok:lombok'
 	implementation 'io.github.cdimascio:dotenv-java:3.2.0'
+	implementation 'org.springframework.cloud:spring-cloud-starter-netflix-eureka-client:4.3.0'
+
 	testImplementation 'org.springframework.boot:spring-boot-starter-test'
 	testRuntimeOnly 'org.junit.platform:junit-platform-launcher'
 }

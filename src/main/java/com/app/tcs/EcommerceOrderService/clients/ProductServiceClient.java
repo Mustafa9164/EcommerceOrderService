@@ -8,15 +8,14 @@ import org.springframework.web.client.RestTemplate;
 
 @Component
 public class ProductServiceClient {
-    private static RestTemplateBuilder restTemplateBuilder = null;
+    private static RestTemplate restTemplate;
 
-    public ProductServiceClient(RestTemplateBuilder restTemplateBuilder) {
-        this.restTemplateBuilder = restTemplateBuilder;
+    public ProductServiceClient(RestTemplate restTemplate) {
+        this.restTemplate=restTemplate;
     }
 
     public static ProductDTO getProductById(Long productId){
-        RestTemplate restTemplate = restTemplateBuilder.build();
-        String url="http://localhost:8081/api/products/" +productId;
+        String url="http://ECOMMERCESPRING/api/products/" +productId;
         ResponseEntity<ProductDTO> response = restTemplate.getForEntity(url, ProductDTO.class);
         return response.getBody();
     }
